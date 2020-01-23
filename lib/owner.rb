@@ -4,5 +4,5 @@ class Owner
   
   
   @@all = []
-  end
+  
 end
