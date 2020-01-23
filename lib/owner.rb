@@ -1,3 +1,3 @@
-class owner
+class Owner
   
 end
