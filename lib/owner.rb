@@ -1,21 +1,21 @@
 
 class Owner
   # code goes here
-  attr_accessor :name, :pets
-  attr_reader :species, :mood
 
-  @@owners = []
+  attr_reader :species, :name
 
-  def initialize(species, pets = {:dogs => [], :cats => []})
-    @species = species
-    @pets = pets
-    @mood = nervous
-    @@owners << self
+  @@all = []
+
+  def initialize(name)
+    @name = name
+    @species = "human"
+    @@all << self
   end
 
-  def say_species
-    "I am a #{@species}."
-  end
+  def cats
+    Cat.all.select {|cat| cat.owner == self}
+    
+  endd
 
   def buy_cat(cat_name)
     @pets[:cats] << Cat.new(cat_name)
