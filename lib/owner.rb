@@ -8,7 +8,6 @@ class Owner
     
   end
   
-  def initialize(species)
-    @species = species
+  
   end
 end
