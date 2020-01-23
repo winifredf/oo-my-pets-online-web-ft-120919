@@ -20,9 +20,49 @@ class Owner
     Dog.all.select {|dog| dog.owner == self|
   end
 
-  def buy_dog(dog_name)
-    @pets[:dogs] << Dog.new(dog_name)
+  def say_species
+    "I am a #{@species}."
   end
+  
+  def self.all
+    @@all
+  end
+  
+  def self.reset_all
+    @@all.clear
+  end
+  
+  def buy_cat(name)
+    Cat.new(name, self)
+  end
+  
+  def buy_dog(name)
+    Dog.new(name, self)
+  end
+  
+  def walk_dogs
+    Dog.all.each {|dog| dog.mood = "happy" if dog.owner == self}
+  end
+  
+  def feed_cats
+    Cat.all.each {|cat| cat.mood = "happy" if cat.owner == self}
+  end
+  
+  def sell_pets
+    dogs.each do |dog|
+      dog.mood = "nervous"
+      dog.owner = nil
+    end
+  end
+  
+    cats.each do |cat|
+      cat.mood = "nervous"
+      cat.owner = nil
+    end
+  end
+  
+  def list_pets
+    
 
   def walk_dogs
     @pets[:dogs].each do |dog|
