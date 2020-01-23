@@ -29,4 +29,8 @@ class Owner
   def self.reset_all
     @@all = []
   end
+  
+  def cat(name, Owner)
+    Cat.all.select{|c| c.owner == self}
+  end
 end
