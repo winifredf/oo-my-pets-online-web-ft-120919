@@ -1,4 +1,4 @@
-require_relative 'environment'
+class Owner
 
   def say_species
     "I am a #{@species}."
