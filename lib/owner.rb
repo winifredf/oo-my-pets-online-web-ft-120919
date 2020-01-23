@@ -30,7 +30,7 @@ class Owner
     @@all = []
   end
   
-  def cat(name, Owner)
+  def cat(name, owner)
     Cat.all.select{|c| c.owner == self}
   end
 end
