@@ -13,7 +13,10 @@ class Owner
     "I am a #{species}."
   end
   
-  def Owner.all
+  def save
+    @@all << self
+  
+  def self.all
     @all
   end
   
