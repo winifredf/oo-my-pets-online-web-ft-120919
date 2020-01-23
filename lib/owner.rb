@@ -4,3 +4,4 @@ class owner
     @owner = owner
     @name = name
   end
+end
